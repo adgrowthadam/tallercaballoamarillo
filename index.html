@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Taller Caballo Amarillo — Aprende violín o pintura desde cero en Veracruz. Primera sesión gratis, sin compromiso." />
+  <title>Taller Caballo Amarillo · Violín y Pintura en Veracruz</title>
+
+  <!-- Google Fonts — Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)
+    }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'PIXEL_ID_AQUI'); /* reemplazar PIXEL_ID_AQUI con el ID real */
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=PIXEL_ID_AQUI&ev=PageView&noscript=1" />
+  </noscript>
+
+  <style>
+    /* ========================================================
+       VARIABLES Y RESET
+    ======================================================== */
+    :root {
+      --primary:     #F2B705;
+      --orange-mid:  #F29F05;
+      --orange-deep: #F28705;
+      --red-orange:  #F24405;
+      --text:        #FFFFFF;
+      --bg-dark:     #0D0D0D;
+      --bg-section:  #111111;
+      --bg-card:     #1A1A1A;
+      --font:        'Montserrat', sans-serif;
+      --radius:      12px;
+      --transition:  0.35s ease;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg-dark);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img { display: block; width: 100%; height: auto; }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ========================================================
+       UTILIDADES
+    ======================================================== */
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+
+    /* Scroll animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ========================================================
+       CTA BUTTON
+    ======================================================== */
+    .btn-cta {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--bg-dark);
+      font-family: var(--font);
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 4px 24px rgba(242, 183, 5, 0.3);
+      white-space: nowrap;
+    }
+    .btn-cta:hover {
+      background: var(--orange-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(242, 135, 5, 0.5);
+    }
+    .btn-cta:active {
+      transform: translateY(0);
+    }
+
+    /* ========================================================
+       NAVBAR
+    ======================================================== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1rem 0;
+      transition: background var(--transition), box-shadow var(--transition);
+    }
+    .navbar.scrolled {
+      background: rgba(13, 13, 13, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-weight: 900;
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+    .nav-logo span {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 500;
+      color: var(--text);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .nav-cta {
+      font-size: 0.85rem;
+      padding: 0.6rem 1.25rem;
+    }
+
+    /* ========================================================
+       SECCIÓN 1 — HERO
+    ======================================================== */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 7rem 0 4rem;
+    }
+
+    /* IMAGE: images/hero.jpg | Foto amplia de clase en sesión, enfocada en manos sobre violín o pincel en lienzo. Effect: overlay gradiente oscuro de izquierda (70% opacidad) a derecha (30%), más oscuro abajo */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #1a0a00 0%, #2d1500 40%, #0d0d0d 100%);
+      z-index: 0;
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(242, 183, 5, 0.08) 0%, transparent 60%);
+    }
+
+    /* Decorative shape */
+    .hero-deco {
+      position: absolute;
+      right: -100px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: min(600px, 60vw);
+      height: min(600px, 60vw);
+      border-radius: 50%;
+      border: 1px solid rgba(242, 183, 5, 0.12);
+      z-index: 0;
+    }
+    .hero-deco::before {
+      content: '';
+      position: absolute;
+      inset: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(242, 183, 5, 0.08);
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content {
+      max-width: 680px;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--primary);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-weight: 400;
+      color: rgba(255,255,255,0.8);
+      max-width: 520px;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    .hero-cta-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .hero-note {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+      font-style: italic;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 2.5rem;
+    }
+    .hero-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 50px;
+      padding: 0.4rem 1rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+    }
+    .hero-badge .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      z-index: 1;
+      animation: bounce 2s infinite;
+    }
+    .hero-scroll span {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+    .hero-scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(242,183,5,0.6), transparent);
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ========================================================
+       SECCIÓN 2 — IDENTIFICACIÓN
+    ======================================================== */
+    .identificacion {
+      padding: 6rem 0;
+      background: var(--bg-section);
+    }
+
+    .identificacion-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .identificacion-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+      }
+    }
+
+    .identificacion h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .frase-card {
+      border-left: 3px solid var(--primary);
+      padding: 1rem 1.25rem;
+      background: rgba(242, 183, 5, 0.06);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.8);
+      font-style: italic;
+    }
+
+    .identificacion-text p {
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 1rem;
+      font-size: 0.97rem;
+      line-height: 1.8;
+    }
+    .identificacion-text p strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    /* IMAGE: images/identificacion.jpg | Primer plano de manos adultas tocando violín por primera vez, expresión de concentración y descubrimiento. Effect: sin filtro, encuadre cercano */
+    .identificacion-img {
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, #2a1500 0%, #3d2000 100%);
+      position: relative;
+    }
+    .img-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      color: rgba(255,255,255,0.2);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .img-placeholder-icon {
+      font-size: 2.5rem;
+      opacity: 0.3;
+    }
+
+    /* ========================================================
+       SECCIÓN 3 — SESIÓN GRATUITA
+    ======================================================== */
+    .sesion-gratis {
+      padding: 6rem 0;
+      background: var(--bg-dark);
+      position: relative;
+      overflow: hidden;
+    }
+    .sesion-gratis::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(242, 183, 5, 0.06) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .sesion-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 3.5rem;
+    }
+    .sesion-header h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+    .sesion-header h2 em {
+      font-style: normal;
+      color: var(--primary);
+    }
+    .sesion-header p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .sesion-nota {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      max-width: 520px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+    .sesion-nota span {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.4);
+      font-weight: 500;
+    }
+    .sesion-nota span strong {
+      color: rgba(255,255,255,0.6);
+    }
+
+    .sesion-pasos {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      max-width: 780px;
+      margin: 0 auto 3rem;
+    }
+    @media (min-width: 600px) {
+      .sesion-pasos { grid-template-columns: 1fr 1fr; }
+    }
+
+    .paso-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .paso-card:hover {
+      border-color: rgba(242, 183, 5, 0.35);
+      transform: translateY(-2px);
+    }
+    .paso-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--bg-dark);
+      font-weight: 900;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .paso-text {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.6;
+    }
+    .paso-text strong {
+      display: block;
+      color: var(--text);
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .sesion-cta {
+      text-align: center;
+    }
+
+    /* ========================================================
+       SECCIÓN 4 — DISCIPLINAS
+    ======================================================== */
+    .disciplinas {
+      padding: 6rem 0;
+      background: var(--bg-section);
+    }
+
+    .disciplinas-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 3.5rem;
+    }
+    .disciplinas-header h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .disciplinas-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .disciplinas-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .disciplina-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+    .disciplina-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+      border-color: rgba(242, 183, 5, 0.3);
+    }
+
+    /* IMAGE: images/violin.jpg | Estudiante adulto tocando violín en clase, manos en posición, fondo cálido desenfocado. Effect: sutil overlay oscuro en la parte inferior */
+    /* IMAGE: images/pintura.jpg | Mano con pincel sobre lienzo con colores cálidos, expresión artística. Effect: sutil overlay oscuro en la parte inferior */
+    .disciplina-img {
+      aspect-ratio: 16/9;
+      position: relative;
+      overflow: hidden;
+    }
+    .disciplina-img-violin {
+      background: linear-gradient(135deg, #1a0f00 0%, #3d2800 100%);
+    }
+    .disciplina-img-pintura {
+      background: linear-gradient(135deg, #1a0008 0%, #3d001a 100%);
+    }
+    .disciplina-label {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: var(--primary);
+      color: var(--bg-dark);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+    }
+
+    .disciplina-body {
+      padding: 1.75rem;
+    }
+    .disciplina-body h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.01em;
+    }
+    .disciplina-sub {
+      font-size: 0.88rem;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .disciplina-body p {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+    .disciplina-para-quien {
+      background: rgba(242, 183, 5, 0.08);
+      border-radius: 8px;
+      padding: 0.9rem 1rem;
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+    }
+    .disciplina-para-quien strong {
+      display: block;
+      color: var(--primary);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+      font-weight: 700;
+    }
+
+    /* CTA intermedio */
+    .cta-intermedio {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    /* ========================================================
+       SECCIÓN 5 — MAESTROS
+    ======================================================== */
+    .maestros {
+      padding: 6rem 0;
+      background: var(--bg-dark);
+    }
+
+    .maestros-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 3.5rem;
+    }
+    .maestros-header h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+    .maestros-header p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.97rem;
+    }
+
+    .maestros-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .maestros-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .maestro-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    /* IMAGE: images/maestro-violin.jpg | Retrato profesional del maestro de violín, sonriendo, con violín en mano. Effect: B&W con tinte amarillo dorado sutil */
+    /* IMAGE: images/maestro-pintura.jpg | Retrato profesional del maestro de pintura en su estudio, rodeado de obra. Effect: B&W con tinte amarillo dorado sutil */
+    .maestro-img {
+      aspect-ratio: 1/1;
+      position: relative;
+      overflow: hidden;
+      max-height: 260px;
+    }
+    .maestro-img-violin {
+      background: linear-gradient(160deg, #1a1a00 0%, #2d2500 100%);
+    }
+    .maestro-img-pintura {
+      background: linear-gradient(160deg, #0d0d1a 0%, #1a1500 100%);
+    }
+    .maestro-img-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .maestro-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(242, 183, 5, 0.15);
+      border: 2px dashed rgba(242, 183, 5, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      opacity: 0.4;
+    }
+    .maestro-pending-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.2);
+      font-weight: 600;
+    }
+
+    .maestro-body {
+      padding: 1.5rem;
+    }
+    .maestro-especialidad {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 0.35rem;
+    }
+    .maestro-body h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      font-style: italic;
+    }
+    .maestro-body p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+      font-style: italic;
+    }
+    .maestro-pending-note {
+      display: inline-block;
+      margin-top: 0.75rem;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.04);
+      border: 1px dashed rgba(255,255,255,0.1);
+      border-radius: 4px;
+      padding: 0.3rem 0.6rem;
+      font-style: normal;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    /* ========================================================
+       SECCIÓN 6 — FORMULARIO
+    ======================================================== */
+    .formulario {
+      padding: 6rem 0;
+      background: linear-gradient(180deg, var(--bg-section) 0%, var(--bg-dark) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .formulario::before {
+      content: '';
+      position: absolute;
+      bottom: -150px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(242, 135, 5, 0.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .formulario-header {
+      text-align: center;
+      max-width: 580px;
+      margin: 0 auto 2.5rem;
+    }
+    .formulario-header h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+    .formulario-header p {
+      font-size: 0.97rem;
+      color: rgba(255,255,255,0.65);
+    }
+
+    /* GHL embed container */
+    #ghl-form {
+      max-width: 580px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 2rem;
+      min-height: 360px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* GHL embed goes here */
+    .ghl-placeholder {
+      text-align: center;
+      color: rgba(255,255,255,0.2);
+    }
+    .ghl-placeholder p {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+    }
+
+    .formulario-note {
+      text-align: center;
+      margin-top: 1.25rem;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ========================================================
+       SECCIÓN 7 — FAQ
+    ======================================================== */
+    .faq {
+      padding: 6rem 0;
+      background: var(--bg-dark);
+    }
+
+    .faq-header {
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto 3rem;
+    }
+    .faq-header h2 {
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    .faq-list {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color var(--transition);
+    }
+    .faq-item.open {
+      border-color: rgba(242, 183, 5, 0.3);
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.25rem 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--font);
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: var(--text);
+      transition: color var(--transition);
+    }
+    .faq-question:hover { color: var(--primary); }
+    .faq-item.open .faq-question { color: var(--primary); }
+
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(242, 183, 5, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background var(--transition), transform var(--transition);
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--primary);
+    }
+    .faq-item.open .faq-icon {
+      background: var(--primary);
+      color: var(--bg-dark);
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+    }
+    .faq-answer-inner {
+      padding: 0 1.5rem 1.25rem;
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.75;
+    }
+
+    /* ========================================================
+       SECCIÓN 8 — CTA FINAL
+    ======================================================== */
+    .cta-final {
+      padding: 6rem 0;
+      background: linear-gradient(135deg, #1a0a00 0%, #0d0d0d 60%);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .cta-final::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 50%, rgba(242, 183, 5, 0.1) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .cta-final .container { position: relative; }
+
+    .cta-final h2 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .cta-final h2 span {
+      color: var(--primary);
+    }
+
+    .cta-final-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 2.5rem;
+    }
+
+    .cta-final-btn-wrap {
+      margin-bottom: 3rem;
+    }
+
+    .contacto-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .contacto-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.55);
+    }
+    .contacto-item strong {
+      color: rgba(255,255,255,0.8);
+    }
+    .contacto-icon {
+      font-size: 1.1rem;
+    }
+
+    /* ========================================================
+       FOOTER
+    ======================================================== */
+    .footer {
+      background: #080808;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 2.5rem 0;
+    }
+    .footer .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      text-align: center;
+    }
+    @media (min-width: 600px) {
+      .footer .container {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+
+    .footer-logo {
+      font-weight: 900;
+      font-size: 1rem;
+      color: var(--primary);
+    }
+    .footer-logo span {
+      display: block;
+      font-weight: 500;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-top: 0.1rem;
+    }
+
+    .footer-meta {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.25);
+      line-height: 1.6;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 0.75rem;
+    }
+    .social-link {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.4);
+      transition: border-color var(--transition), color var(--transition);
+    }
+    .social-link:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* ========================================================
+       RESPONSIVE — AJUSTES MÓVIL
+    ======================================================== */
+    @media (max-width: 480px) {
+      .btn-cta { font-size: 0.9rem; padding: 0.9rem 1.6rem; }
+      .hero { padding: 6rem 0 5rem; }
+      .hero-deco { display: none; }
+      .sesion-pasos { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======================================================
+       NAVBAR
+  ====================================================== -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navegación principal">
+    <div class="container">
+      <div class="nav-logo">
+        Caballo Amarillo
+        <span>Taller de Música y Arte · Veracruz</span>
+      </div>
+      <a href="#ghl-form" class="btn-cta nav-cta">Primera sesión gratis →</a>
+    </div>
+  </nav>
+
+  <!-- ======================================================
+       SECCIÓN 1 — HERO
+  ====================================================== -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg"></div>
+    <div class="hero-deco"></div>
+
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-eyebrow reveal">Taller de Violín y Pintura · Veracruz</p>
+        <h1 class="reveal reveal-delay-1">
+          El talento no <em>se nace</em> —<br>se despierta.
+        </h1>
+        <p class="hero-sub reveal reveal-delay-2">
+          Aprende violín o pintura desde cero, a tu propio ritmo.
+          Sin importar tu edad. Sin importar si nunca has tomado
+          una clase en tu vida.
+        </p>
+        <div class="hero-cta-wrap reveal reveal-delay-3">
+          <a href="#ghl-form" class="btn-cta">Agenda tu primera sesión gratis →</a>
+          <p class="hero-note">Sin compromiso. Solo tú, el arte y un maestro que sabe escucharte.</p>
+        </div>
+        <div class="hero-badges reveal reveal-delay-4">
+          <div class="hero-badge"><span class="dot"></span> Primera sesión gratis</div>
+          <div class="hero-badge"><span class="dot"></span> Desde 15 hasta 70 años</div>
+          <div class="hero-badge"><span class="dot"></span> Colonia Florista, Veracruz</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+      <span>Descubre más</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       SECCIÓN 2 — IDENTIFICACIÓN
+  ====================================================== -->
+  <section class="identificacion" id="identificacion">
+    <div class="container">
+      <div class="identificacion-grid">
+
+        <div class="identificacion-content">
+          <span class="section-tag reveal">¿Te suena familiar?</span>
+          <h2 class="reveal">¿Te suena familiar alguna de estas frases?</h2>
+
+          <div class="frase-card reveal reveal-delay-1">
+            "Siempre quise aprender a tocar un instrumento, pero nunca fue el momento."
+          </div>
+          <div class="frase-card reveal reveal-delay-2">
+            "Creo que no tengo talento para pintar o para la música."
+          </div>
+          <div class="frase-card reveal reveal-delay-3">
+            "Ya estoy muy grande para empezar."
+          </div>
+
+          <div class="identificacion-text reveal reveal-delay-4">
+            <p>Si alguna de estas frases pasó por tu cabeza, estás exactamente donde debes estar.</p>
+            <p>En Taller Caballo Amarillo no enseñamos técnica fría ni teoría aburrida. Enseñamos a conectar con <strong>lo que ya tienes adentro</strong> — y a expresarlo a través del violín o la pintura.</p>
+            <p>El talento no es un punto de partida. Es lo que construyes cuando alguien <strong>te guía de la forma correcta.</strong></p>
+          </div>
+        </div>
+
+        <!-- IMAGE: images/identificacion.jpg | Primer plano de manos adultas tocando violín por primera vez, expresión de concentración y descubrimiento. Effect: sin filtro, encuadre cercano -->
+        <div class="identificacion-img reveal reveal-delay-2">
+          <div class="img-placeholder">
+            <div class="img-placeholder-icon">🎻</div>
+            <span>Foto: primera clase de violín</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       SECCIÓN 3 — SESIÓN GRATUITA
+  ====================================================== -->
+  <section class="sesion-gratis" id="sesion">
+    <div class="container">
+      <div class="sesion-header">
+        <span class="section-tag reveal">Primera sesión</span>
+        <h2 class="reveal">
+          Tu primera sesión es gratis —<br>y no es una clase <em>cualquiera</em>
+        </h2>
+        <p class="reveal reveal-delay-1">
+          En 60 minutos vas a descubrir qué disciplina conecta más contigo, cómo aprende tu mente y tu cuerpo, y qué camino específico tomarías si decides continuar.
+        </p>
+      </div>
+
+      <div class="sesion-nota reveal reveal-delay-1">
+        <span><strong>No es</strong> una clase de demostración.</span>
+        <span><strong>No es</strong> una presentación de ventas.</span>
+        <span>Es una sesión real, contigo, diseñada para que salgas queriendo volver.</span>
+      </div>
+
+      <div class="sesion-pasos">
+        <div class="paso-card reveal reveal-delay-1">
+          <div class="paso-num">1</div>
+          <div class="paso-text">
+            <strong>El maestro te conoce</strong>
+            Tus intereses, tu ritmo y lo que quieres lograr.
+          </div>
+        </div>
+        <div class="paso-card reveal reveal-delay-2">
+          <div class="paso-num">2</div>
+          <div class="paso-text">
+            <strong>Primer contacto real</strong>
+            Con el violín o con la pintura — desde el primer día.
+          </div>
+        </div>
+        <div class="paso-card reveal reveal-delay-3">
+          <div class="paso-num">3</div>
+          <div class="paso-text">
+            <strong>Descubres que sí puedes</strong>
+            Aunque nunca hayas intentado antes.
+          </div>
+        </div>
+        <div class="paso-card reveal reveal-delay-4">
+          <div class="paso-num">4</div>
+          <div class="paso-text">
+            <strong>Sales con un plan claro</strong>
+            Lo que aprenderías si decides continuar.
+          </div>
+        </div>
+      </div>
+
+      <div class="sesion-cta reveal">
+        <a href="#ghl-form" class="btn-cta">Quiero mi primera sesión gratis →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       SECCIÓN 4 — DISCIPLINAS
+  ====================================================== -->
+  <section class="disciplinas" id="disciplinas">
+    <div class="container">
+      <div class="disciplinas-header">
+        <span class="section-tag reveal">Qué aprenderás</span>
+        <h2 class="reveal">Dos caminos. Una misma misión: que te expreses.</h2>
+      </div>
+
+      <div class="disciplinas-grid">
+
+        <!-- VIOLÍN -->
+        <div class="disciplina-card reveal reveal-delay-1">
+          <!-- IMAGE: images/violin.jpg | Estudiante adulto tocando violín en clase, manos en posición, fondo cálido desenfocado. Effect: sutil overlay oscuro en la parte inferior -->
+          <div class="disciplina-img disciplina-img-violin">
+            <div class="img-placeholder">
+              <div class="img-placeholder-icon">🎻</div>
+            </div>
+            <span class="disciplina-label">Violín</span>
+          </div>
+          <div class="disciplina-body">
+            <h3>Violín</h3>
+            <p class="disciplina-sub">Más que un instrumento — una voz.</p>
+            <p>
+              El violín tiene fama de difícil. En Caballo Amarillo lo enseñamos de forma diferente: empezamos por lo que sientes, no por lo que debes memorizar. Desde tu primera sesión vas a producir sonido real, no ejercicios vacíos.
+            </p>
+            <div class="disciplina-para-quien">
+              <strong>¿Para quién es?</strong>
+              Personas que siempre sintieron que la música es parte de ellas pero nunca encontraron el espacio para explorarla.
+            </div>
+          </div>
+        </div>
+
+        <!-- PINTURA -->
+        <div class="disciplina-card reveal reveal-delay-2">
+          <!-- IMAGE: images/pintura.jpg | Mano con pincel sobre lienzo con colores cálidos, expresión artística. Effect: sutil overlay oscuro en la parte inferior -->
+          <div class="disciplina-img disciplina-img-pintura">
+            <div class="img-placeholder">
+              <div class="img-placeholder-icon">🎨</div>
+            </div>
+            <span class="disciplina-label">Pintura</span>
+          </div>
+          <div class="disciplina-body">
+            <h3>Pintura</h3>
+            <p class="disciplina-sub">No se trata de pintar bien. Se trata de decir algo.</p>
+            <p>
+              La pintura no mide técnica — mide presencia. Aprenderás a usar el color, la forma y el trazo como lenguaje propio. Sin comparaciones, sin calificaciones, sin "eso está mal".
+            </p>
+            <div class="disciplina-para-quien">
+              <strong>¿Para quién es?</strong>
+              Personas que quieren un espacio donde crear sin juicio, soltar el estrés y descubrir qué tienen que decir.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA intermedio -->
+      <div class="cta-intermedio reveal">
+        <a href="#ghl-form" class="btn-cta">Quiero mi primera sesión gratis →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       SECCIÓN 5 — MAESTROS
+  ====================================================== -->
+  <section class="maestros" id="maestros">
+    <div class="container">
+      <div class="maestros-header">
+        <span class="section-tag reveal">Tus guías</span>
+        <h2 class="reveal">Quien te guía importa tanto como lo que aprendes</h2>
+        <p class="reveal reveal-delay-1">Nuestros maestros no solo enseñan una disciplina — enseñan a escucharse.</p>
+      </div>
+
+      <div class="maestros-grid">
+
+        <!-- MAESTRO VIOLÍN -->
+        <div class="maestro-card reveal reveal-delay-1">
+          <!-- IMAGE: images/maestro-violin.jpg | Retrato profesional del maestro de violín, sonriendo, con violín en mano. Effect: B&W con tinte amarillo dorado sutil -->
+          <div class="maestro-img maestro-img-violin">
+            <div class="maestro-img-placeholder">
+              <div class="maestro-avatar">🎻</div>
+              <span class="maestro-pending-label">Foto pendiente</span>
+            </div>
+          </div>
+          <div class="maestro-body">
+            <p class="maestro-especialidad">Maestro de Violín</p>
+            <h3>[Nombre pendiente]</h3>
+            <p>
+              "Su método parte de una premisa simple: antes de tocar una nota, hay que saber qué quieres decir con ella."
+            </p>
+            <span class="maestro-pending-note">Biografía completa próximamente</span>
+          </div>
+        </div>
+
+        <!-- MAESTRO PINTURA -->
+        <div class="maestro-card reveal reveal-delay-2">
+          <!-- IMAGE: images/maestro-pintura.jpg | Retrato profesional del maestro de pintura en su estudio, rodeado de obra. Effect: B&W con tinte amarillo dorado sutil -->
+          <div class="maestro-img maestro-img-pintura">
+            <div class="maestro-img-placeholder">
+              <div class="maestro-avatar">🎨</div>
+              <span class="maestro-pending-label">Foto pendiente</span>
+            </div>
+          </div>
+          <div class="maestro-body">
+            <p class="maestro-especialidad">Maestro de Pintura</p>
+            <h3>[Nombre pendiente]</h3>
+            <p>
+              "Su clase no tiene reglas de técnica: tiene reglas de honestidad. Acompañando a personas que nunca creyeron que podían pintar — hasta que lo hicieron."
+            </p>
+            <span class="maestro-pending-note">Biografía completa próximamente</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       SECCIÓN 6 — FORMULARIO
+  ====================================================== -->
+  <section class="formulario" id="ghl-form-section">
+    <div class="container">
+      <div class="formulario-header">
+        <span class="section-tag reveal">Reserva tu lugar</span>
+        <h2 class="reveal">Reserva tu lugar — es gratis y sin compromiso</h2>
+        <p class="reveal reveal-delay-1">Solo 4 datos y en menos de 2 minutos agendas tu primera sesión.</p>
+      </div>
+
+      <!-- GHL embed goes here -->
+      <div id="ghl-form" class="reveal">
+        <div class="ghl-placeholder">
+          <div style="font-size:2rem;opacity:0.25">📋</div>
+          <p>Formulario GHL — embed pendiente</p>
+        </div>
+      </div>
+
+      <p class="formulario-note reveal">Te contactamos en menos de 24 horas para confirmar tu horario.</p>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       SECCIÓN 7 — FAQ
+  ====================================================== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="faq-header">
+        <span class="section-tag reveal">Preguntas frecuentes</span>
+        <h2 class="reveal">Lo que más nos preguntan</h2>
+      </div>
+
+      <div class="faq-list">
+
+        <div class="faq-item reveal reveal-delay-1">
+          <button class="faq-question" aria-expanded="false">
+            ¿Necesito experiencia previa o saber leer música?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              No. El taller está diseñado para personas que empiezan desde cero. El maestro adapta cada clase a tu nivel y tu ritmo — no al revés.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-2">
+          <button class="faq-question" aria-expanded="false">
+            ¿Qué pasa exactamente en la primera sesión gratuita?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              Es una sesión real de 60 minutos contigo. El maestro te conoce, exploras la disciplina que elegiste y defines si quieres continuar. Sin presión, sin contratos, sin letra pequeña.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-3">
+          <button class="faq-question" aria-expanded="false">
+            ¿Hay un rango de edad para inscribirse?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              El taller está abierto a personas de 15 a 70 años. Si tienes ganas de aprender, tienes la edad correcta.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       SECCIÓN 8 — CTA FINAL
+  ====================================================== -->
+  <section class="cta-final" id="cta-final">
+    <div class="container">
+      <span class="section-tag reveal">Es tu momento</span>
+      <h2 class="reveal">
+        El mejor momento para empezar<br>era antes.<br>
+        <span>El segundo mejor es hoy.</span>
+      </h2>
+      <p class="cta-final-sub reveal reveal-delay-1">
+        Tu primera sesión es gratis. Los lugares son limitados.
+      </p>
+      <div class="cta-final-btn-wrap reveal reveal-delay-2">
+        <a href="#ghl-form-section" class="btn-cta">Agenda aquí →</a>
+      </div>
+
+      <div class="contacto-grid reveal reveal-delay-3">
+        <div class="contacto-item">
+          <span class="contacto-icon">📍</span>
+          <span>Colonia Florista, <strong>Veracruz</strong></span>
+        </div>
+        <div class="contacto-item">
+          <span class="contacto-icon">📱</span>
+          <span>WhatsApp: <strong>[pendiente]</strong></span>
+        </div>
+        <div class="contacto-item">
+          <span class="contacto-icon">🕐</span>
+          <span>Horarios: <strong>[pendiente]</strong></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       FOOTER
+  ====================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">
+        Taller Caballo Amarillo
+        <span>Música y Arte · Veracruz, México</span>
+      </div>
+      <div class="footer-meta">
+        Colonia Florista, Veracruz · © 2026<br>
+        Diseñado por <strong style="color:rgba(255,255,255,0.4)">AdGrowth Agency</strong>
+      </div>
+      <div class="footer-social">
+        <!-- Reemplazar href con URLs reales -->
+        <a href="#" class="social-link" aria-label="Instagram">IG</a>
+        <a href="#" class="social-link" aria-label="Facebook">FB</a>
+        <a href="#" class="social-link" aria-label="WhatsApp">WA</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================
+       JAVASCRIPT
+  ====================================================== -->
+  <script>
+    /* --- Navbar scroll --- */
+    (function () {
+      const navbar = document.getElementById('navbar');
+      const onScroll = () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 40);
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+
+    /* --- Intersection Observer — scroll animations --- */
+    (function () {
+      const els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(el => el.classList.add('visible'));
+        return;
+      }
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+      );
+      els.forEach(el => observer.observe(el));
+    })();
+
+    /* --- FAQ accordion --- */
+    (function () {
+      const items = document.querySelectorAll('.faq-item');
+      items.forEach(item => {
+        const btn = item.querySelector('.faq-question');
+        btn.addEventListener('click', () => {
+          const isOpen = item.classList.contains('open');
+          // Cerrar todos
+          items.forEach(i => {
+            i.classList.remove('open');
+            i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          });
+          // Abrir el clickeado si estaba cerrado
+          if (!isOpen) {
+            item.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+    })();
+
+    /* --- Meta Pixel: evento Lead cuando el usuario interactúa con el área del formulario --- */
+    (function () {
+      const formSection = document.getElementById('ghl-form');
+      if (!formSection || typeof fbq === 'undefined') return;
+      let fired = false;
+      const fireLeadEvent = () => {
+        if (fired) return;
+        fired = true;
+        fbq('track', 'Lead');
+      };
+      formSection.addEventListener('click', fireLeadEvent, { once: true });
+      formSection.addEventListener('focusin', fireLeadEvent, { once: true });
+
+      // También disparar cuando el scroll llega a la sección del formulario
+      if ('IntersectionObserver' in window) {
+        const obs = new IntersectionObserver(
+          (entries) => {
+            if (entries[0].isIntersecting) {
+              fireLeadEvent();
+              obs.disconnect();
+            }
+          },
+          { threshold: 0.5 }
+        );
+        obs.observe(formSection);
+      }
+    })();
+  </script>
+
+</body>
+</html>

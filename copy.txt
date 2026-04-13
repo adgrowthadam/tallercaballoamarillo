@@ -1,0 +1,283 @@
+=========================================================
+COPY COMPLETO — LANDING PAGE
+TALLER CABALLO AMARILLO · VERACRUZ
+=========================================================
+
+
+─────────────────────────────────────────────────────────
+SECCIÓN 1 — HERO
+─────────────────────────────────────────────────────────
+
+TITULAR:
+El talento no se nace — se despierta.
+
+SUBTITULAR:
+Aprende violín o pintura desde cero, a tu propio ritmo.
+Sin importar tu edad. Sin importar si nunca has tomado
+una clase en tu vida.
+
+CTA BOTÓN:
+Agenda tu primera sesión gratis →
+
+TEXTO BAJO EL BOTÓN:
+Sin compromiso. Solo tú, el arte y un maestro que sabe
+escucharte.
+
+
+─────────────────────────────────────────────────────────
+SECCIÓN 2 — IDENTIFICACIÓN
+─────────────────────────────────────────────────────────
+
+TITULAR:
+¿Te suena familiar alguna de estas frases?
+
+FRASES:
+"Siempre quise aprender a tocar un instrumento, pero
+nunca fue el momento."
+
+"Creo que no tengo talento para pintar o para la música."
+
+"Ya estoy muy grande para empezar."
+
+PÁRRAFO:
+Si alguna de estas frases pasó por tu cabeza, estás
+exactamente donde debes estar.
+
+En Taller Caballo Amarillo no enseñamos técnica fría ni
+teoría aburrida. Enseñamos a conectar con lo que ya tienes
+adentro — y a expresarlo a través del violín o la pintura.
+
+El talento no es un punto de partida. Es lo que construyes
+cuando alguien te guía de la forma correcta.
+
+
+─────────────────────────────────────────────────────────
+SECCIÓN 3 — LA SESIÓN GRATUITA COMO PRODUCTO
+─────────────────────────────────────────────────────────
+
+TITULAR:
+Tu primera sesión es gratis — y no es una clase cualquiera
+
+PÁRRAFO:
+En 60 minutos vas a descubrir qué disciplina conecta más
+contigo, cómo aprende tu mente y tu cuerpo, y qué camino
+específico tomarías si decides continuar.
+
+No es una clase de demostración.
+No es una presentación de ventas.
+
+Es una sesión real, contigo, diseñada para que salgas
+sabiendo si el violín o la pintura es para ti — y con
+ganas de volver.
+
+LO QUE PASA EN TU PRIMERA SESIÓN:
+→ El maestro te conoce: tus intereses, tu ritmo,
+  lo que quieres lograr
+→ Tienes tu primer contacto real con el violín
+  o con la pintura
+→ Descubres que sí puedes — aunque nunca hayas
+  intentado antes
+→ Sales con un plan claro de lo que aprenderías
+  si decides continuar
+
+CTA BOTÓN:
+Quiero mi primera sesión gratis →
+
+
+─────────────────────────────────────────────────────────
+SECCIÓN 4 — LAS DISCIPLINAS
+─────────────────────────────────────────────────────────
+
+TITULAR:
+Dos caminos. Una misma misión: que te expreses.
+
+- - - - - - - - - - - - - -
+VIOLÍN
+- - - - - - - - - - - - - -
+
+SUBTITULAR:
+Más que un instrumento — una voz.
+
+PÁRRAFO:
+El violín tiene fama de difícil. En Caballo Amarillo lo
+enseñamos de forma diferente: empezamos por lo que sientes,
+no por lo que debes memorizar. Desde tu primera sesión vas
+a producir sonido real, no ejercicios vacíos.
+
+PARA QUIÉN ES:
+Personas que siempre sintieron que la música es parte de
+ellas pero nunca encontraron el espacio para explorarla.
+
+- - - - - - - - - - - - - -
+PINTURA
+- - - - - - - - - - - - - -
+
+SUBTITULAR:
+No se trata de pintar bien. Se trata de decir algo.
+
+PÁRRAFO:
+La pintura no mide técnica — mide presencia. Aprenderás
+a usar el color, la forma y el trazo como lenguaje propio.
+Sin comparaciones, sin calificaciones, sin "eso está mal".
+
+PARA QUIÉN ES:
+Personas que quieren un espacio donde crear sin juicio,
+soltar el estrés y descubrir qué tienen que decir.
+
+
+─────────────────────────────────────────────────────────
+SECCIÓN 5 — LOS MAESTROS
+─────────────────────────────────────────────────────────
+
+TITULAR:
+Quien te guía importa tanto como lo que aprendes
+
+SUBTITULAR:
+Nuestros maestros no solo enseñan una disciplina —
+enseñan a escucharse.
+
+- - - - - - - - - - - - - -
+MAESTRO DE VIOLÍN
+- - - - - - - - - - - - - -
+
+[FOTO DEL MAESTRO — pendiente]
+
+NOMBRE: [Pendiente]
+ESPECIALIDAD: Violín
+
+DESCRIPCIÓN:
+[Pendiente — incluir: años de experiencia, enfoque
+pedagógico en 2 líneas, frase en primera persona que
+refleje su filosofía de enseñanza, dato humano cercano]
+
+EJEMPLO DE ESTRUCTURA CUANDO SE TENGA LA INFO:
+"[Nombre] lleva [X] años enseñando violín en Veracruz.
+Su método parte de una premisa simple: antes de tocar
+una nota, hay que saber qué quieres decir con ella.
+[Dato humano / frase personal]."
+
+- - - - - - - - - - - - - -
+MAESTRO DE PINTURA
+- - - - - - - - - - - - - -
+
+[FOTO DEL MAESTRO — pendiente]
+
+NOMBRE: [Pendiente]
+ESPECIALIDAD: Pintura
+
+DESCRIPCIÓN:
+[Pendiente — incluir: años de experiencia, enfoque
+pedagógico en 2 líneas, frase en primera persona que
+refleje su filosofía de enseñanza, dato humano cercano]
+
+EJEMPLO DE ESTRUCTURA CUANDO SE TENGA LA INFO:
+"[Nombre] lleva [X] años acompañando a personas que
+nunca creyeron que podían pintar — hasta que lo hicieron.
+Su clase no tiene reglas de técnica: tiene reglas de
+honestidad. [Dato humano / frase personal]."
+
+
+─────────────────────────────────────────────────────────
+SECCIÓN 6 — FORMULARIO
+─────────────────────────────────────────────────────────
+
+TITULAR:
+Reserva tu lugar — es gratis y sin compromiso
+
+SUBTITULAR:
+Solo 4 datos y en menos de 2 minutos agendas
+tu primera sesión.
+
+CAMPOS DEL FORMULARIO:
+1. Nombre completo
+2. WhatsApp
+3. ¿Qué te interesa explorar?
+   ( ) Violín
+   ( ) Pintura
+   ( ) Ambas
+4. ¿Cuándo prefieres tu sesión?
+   ( ) Mañana
+   ( ) Tarde
+   ( ) Noche
+
+CTA BOTÓN:
+Quiero mi sesión gratis →
+
+TEXTO BAJO EL BOTÓN:
+Te contactamos en menos de 24 horas para confirmar
+tu horario.
+
+
+─────────────────────────────────────────────────────────
+SECCIÓN 7 — FAQ
+─────────────────────────────────────────────────────────
+
+PREGUNTA 1:
+¿Necesito experiencia previa o saber leer música?
+
+RESPUESTA:
+No. El taller está diseñado para personas que empiezan
+desde cero. El maestro adapta cada clase a tu nivel y
+tu ritmo — no al revés.
+
+PREGUNTA 2:
+¿Qué pasa exactamente en la primera sesión gratuita?
+
+RESPUESTA:
+Es una sesión real de 60 minutos contigo. El maestro
+te conoce, exploras la disciplina que elegiste y defines
+si quieres continuar. Sin presión, sin contratos,
+sin letra pequeña.
+
+PREGUNTA 3:
+¿Hay un rango de edad para inscribirse?
+
+RESPUESTA:
+El taller está abierto a personas de 15 a 70 años.
+Si tienes ganas de aprender, tienes la edad correcta.
+
+
+─────────────────────────────────────────────────────────
+SECCIÓN 8 — CTA FINAL
+─────────────────────────────────────────────────────────
+
+TITULAR:
+El mejor momento para empezar era antes.
+El segundo mejor es hoy.
+
+SUBTITULAR:
+Tu primera sesión es gratis. Los lugares son limitados.
+
+CTA BOTÓN:
+Agenda aquí →
+
+DATOS DE CONTACTO:
+📍 Colonia Florista, Veracruz
+📱 WhatsApp: [número del taller — pendiente]
+🕐 Horarios: [completar cuando el cliente confirme]
+
+
+─────────────────────────────────────────────────────────
+NOTAS PARA COMPLETAR
+─────────────────────────────────────────────────────────
+
+PENDIENTE DEL CLIENTE:
+→ Nombre, foto y biografía del maestro de violín
+→ Nombre, foto y biografía del maestro de pintura
+→ Número de WhatsApp oficial del taller
+→ Horarios disponibles por disciplina
+→ Fotos reales de clases en sesión (no espacio vacío)
+→ Dirección exacta dentro de Colonia Florista
+
+NOTA PARA EL DESARROLLADOR:
+→ El formulario debe enviar webhook POST a n8n al submit
+→ Incluir Píxel de Meta con evento Lead al enviar formulario
+→ Prioridad móvil — diseño mobile-first
+→ CTA principal repetido en Hero, después de disciplinas
+   y en sección final
+→ Sección de maestros: dejar espacio reservado con
+   placeholder visual hasta recibir info del cliente
+
+=========================================================
+AdGrowth Agency · Caballo Amarillo · 2026
+=========================================================
