@@ -805,7 +805,9 @@
     ======================================================== */
     .formulario {
       padding: 6rem 0;
-      background: linear-gradient(180deg, var(--bg-section) 0%, var(--bg-dark) 100%);
+      background:
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.72)),
+        url('images/Formback.png') center center / cover no-repeat;
       position: relative;
       overflow: hidden;
     }
@@ -841,28 +843,18 @@
 
     /* GHL embed container */
     #ghl-form {
-      max-width: 580px;
+      max-width: 620px;
       margin: 0 auto;
-      background: var(--bg-card);
-      border: 1px solid rgba(255,255,255,0.08);
       border-radius: var(--radius);
-      padding: 2rem;
-      min-height: 360px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      overflow: hidden;
+      min-height: 727px;
     }
-    /* GHL embed goes here */
-    .ghl-placeholder {
-      text-align: center;
-      color: rgba(255,255,255,0.2);
-    }
-    .ghl-placeholder p {
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-top: 0.5rem;
+    #ghl-form iframe {
+      display: block;
+      width: 100%;
+      height: 727px;
+      border: none;
+      border-radius: var(--radius);
     }
 
     .formulario-note {
@@ -1388,12 +1380,26 @@
         <p class="reveal reveal-delay-1">Solo 4 datos y en menos de 2 minutos agendas tu primera sesión.</p>
       </div>
 
-      <!-- GHL embed goes here -->
+      <!-- GHL embed -->
       <div id="ghl-form" class="reveal">
-        <div class="ghl-placeholder">
-          <div style="font-size:2rem;opacity:0.25">📋</div>
-          <p>Formulario GHL — embed pendiente</p>
-        </div>
+        <iframe
+          src="https://api.leadconnectorhq.com/widget/form/5sBLOUR7Nw4sHeUnqlgi"
+          style="width:100%;height:727px;border:none;border-radius:3px"
+          id="inline-5sBLOUR7Nw4sHeUnqlgi"
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="Form Landing "
+          data-height="727"
+          data-layout-iframe-id="inline-5sBLOUR7Nw4sHeUnqlgi"
+          data-form-id="5sBLOUR7Nw4sHeUnqlgi"
+          title="Form Landing ">
+        </iframe>
+        <script src="https://link.msgsndr.com/js/form_embed.js"></script>
       </div>
 
       <p class="formulario-note reveal">Te contactamos en menos de 24 horas para confirmar tu horario.</p>
@@ -1497,7 +1503,8 @@
       </div>
       <div class="footer-meta">
         Colonia Floresta, Veracruz · © 2026<br>
-        Diseñado por <strong style="color:rgba(255,255,255,0.4)">AdGrowth Agency</strong>
+        Diseñado por <strong style="color:rgba(255,255,255,0.4)">AdGrowth Agency</strong><br>
+        <a href="aviso-privacidad/index.html" style="color:rgba(255,255,255,0.3);font-size:0.75rem;text-decoration:underline;text-underline-offset:3px;">Aviso de Privacidad</a>
       </div>
       <div class="footer-social">
         <!-- Reemplazar href con URLs reales -->

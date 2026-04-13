@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Aviso de Privacidad · Taller Caballo Amarillo</title>
+
+  <!-- Google Fonts — Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ========================================================
+       VARIABLES Y RESET
+    ======================================================== */
+    :root {
+      --primary:     #F2B705;
+      --orange-mid:  #F29F05;
+      --orange-deep: #F28705;
+      --red-orange:  #F24405;
+      --text:        #FFFFFF;
+      --bg-dark:     #0D0D0D;
+      --bg-section:  #111111;
+      --bg-card:     #1A1A1A;
+      --font:        'Montserrat', sans-serif;
+      --radius:      12px;
+      --transition:  0.35s ease;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg-dark);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      width: 100%;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* Scroll animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ========================================================
+       NAVBAR
+    ======================================================== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1rem 0;
+      transition: background var(--transition), box-shadow var(--transition);
+      background: rgba(13, 13, 13, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(242, 183, 5, 0.1);
+    }
+
+    .navbar .container {
+      max-width: 1100px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-logo img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .nav-logo-text {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      line-height: 1.2;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .nav-logo-text .logo-amarillo {
+      color: var(--primary);
+      font-style: normal;
+    }
+
+    .nav-back {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.05em;
+      transition: color var(--transition);
+    }
+
+    .nav-back:hover { color: var(--primary); }
+
+    /* ========================================================
+       HERO DEL AVISO
+    ======================================================== */
+    .aviso-hero {
+      padding: 9rem 0 4rem;
+      background: linear-gradient(135deg, #1a0a00 0%, #2d1500 40%, #0d0d0d 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .aviso-hero::after {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(242,183,5,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .aviso-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .aviso-hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .aviso-hero h1 span {
+      color: var(--primary);
+    }
+
+    .aviso-hero p.subtitulo {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.5);
+      font-weight: 500;
+    }
+
+    /* ========================================================
+       CONTENIDO
+    ======================================================== */
+    .aviso-body {
+      padding: 5rem 0 6rem;
+      background: var(--bg-section);
+    }
+
+    .aviso-block {
+      background: var(--bg-card);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      padding: 2rem 2rem 2rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .aviso-block::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--primary), var(--orange-deep));
+      border-radius: 4px 0 0 4px;
+    }
+
+    .aviso-block h2 {
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .aviso-block p {
+      font-size: 0.93rem;
+      color: rgba(255,255,255,0.75);
+      font-weight: 400;
+      line-height: 1.8;
+    }
+
+    .aviso-block p + p {
+      margin-top: 0.75rem;
+    }
+
+    .aviso-block ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 0.5rem;
+    }
+
+    .aviso-block ul li {
+      font-size: 0.93rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.8;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+
+    .aviso-block ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .aviso-email {
+      color: var(--primary);
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .aviso-update {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.25);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ========================================================
+       FOOTER MÍNIMO
+    ======================================================== */
+    .footer-mini {
+      background: var(--bg-dark);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    .footer-mini p {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.2);
+      font-weight: 500;
+    }
+
+    .footer-mini a {
+      color: rgba(242,183,5,0.5);
+      transition: color var(--transition);
+    }
+
+    .footer-mini a:hover { color: var(--primary); }
+
+    /* ========================================================
+       RESPONSIVE
+    ======================================================== */
+    @media (max-width: 600px) {
+      .aviso-block {
+        padding: 1.5rem 1.25rem 1.5rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-logo">
+        <!-- IMAGE: ../images/CABALLOAMARILLO.png | Logo del taller -->
+        <img src="../images/CABALLOAMARILLO.png" alt="Taller de Artes Expresivas Caballo Amarillo" />
+        <span class="nav-logo-text">Taller de artes expresivas <em class="logo-amarillo">caballo amarillo</em></span>
+      </div>
+      <a href="../index.html" class="nav-back">← Volver al inicio</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="aviso-hero">
+    <div class="container">
+      <span class="aviso-tag reveal">Legal</span>
+      <h1 class="reveal reveal-delay-1">Aviso de <span>Privacidad</span></h1>
+      <p class="subtitulo reveal reveal-delay-2">Taller de Artes Expresivas Caballo Amarillo · Veracruz, México</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <section class="aviso-body">
+    <div class="container">
+
+      <p class="reveal" style="font-size:0.9rem;color:rgba(255,255,255,0.5);margin-bottom:2.5rem;line-height:1.8;">
+        En cumplimiento con la <strong style="color:rgba(255,255,255,0.7);">Ley Federal de Protección de Datos Personales en Posesión de Particulares (LFPDPPP)</strong>, le informamos lo siguiente:
+      </p>
+
+      <!-- Responsable -->
+      <div class="aviso-block reveal">
+        <h2>Responsable</h2>
+        <p>
+          <strong style="color:#fff;">Taller de Artes Expresivas Caballo Amarillo</strong>, con domicilio en
+          Calle Floresta Sur 93, Fraccionamiento Floresta, Veracruz, Ver., C.P. 91940.
+        </p>
+        <p>
+          Correo de contacto:
+          <a class="aviso-email" href="mailto:tallerdeartesexpresivas@caballoamarillo.com.mx">
+            tallerdeartesexpresivas@caballoamarillo.com.mx
+          </a>
+        </p>
+      </div>
+
+      <!-- Datos que recabamos -->
+      <div class="aviso-block reveal">
+        <h2>Datos personales que recabamos</h2>
+        <ul>
+          <li>Nombre y apellidos</li>
+          <li>Número de teléfono (WhatsApp)</li>
+          <li>Correo electrónico</li>
+        </ul>
+      </div>
+
+      <!-- Finalidad -->
+      <div class="aviso-block reveal">
+        <h2>Finalidad del tratamiento</h2>
+        <p>Sus datos son utilizados para:</p>
+        <ul>
+          <li>Responder a su solicitud de información sobre nuestros cursos y talleres.</li>
+          <li>Agendar una cita o visita.</li>
+          <li>Enviarle información sobre actividades, promociones y novedades del taller, únicamente si usted lo autoriza expresamente.</li>
+        </ul>
+      </div>
+
+      <!-- Transferencia -->
+      <div class="aviso-block reveal">
+        <h2>Transferencia de datos</h2>
+        <p>
+          Sus datos personales pueden ser compartidos con proveedores de tecnología y plataformas de gestión
+          (como herramientas de CRM y comunicación) necesarios para operar nuestros servicios, quienes están
+          obligados a mantener la confidencialidad de su información.
+        </p>
+        <p>
+          No vendemos ni cedemos sus datos a terceros con fines comerciales.
+        </p>
+      </div>
+
+      <!-- Derechos ARCO -->
+      <div class="aviso-block reveal">
+        <h2>Derechos ARCO</h2>
+        <p>
+          Usted tiene derecho a <strong style="color:#fff;">Acceder, Rectificar, Cancelar u Oponerse</strong>
+          al tratamiento de sus datos personales (derechos ARCO).
+        </p>
+        <p>
+          Para ejercerlos, envíe su solicitud a
+          <a class="aviso-email" href="mailto:tallerdeartesexpresivas@caballoamarillo.com.mx">
+            tallerdeartesexpresivas@caballoamarillo.com.mx
+          </a>
+          indicando su nombre completo y el derecho que desea ejercer.
+          Responderemos en un plazo máximo de <strong style="color:#fff;">20 días hábiles</strong>.
+        </p>
+      </div>
+
+      <!-- Cambios -->
+      <div class="aviso-block reveal">
+        <h2>Cambios al aviso de privacidad</h2>
+        <p>
+          Cualquier modificación a este aviso será notificada a través de nuestro sitio web y/o por correo electrónico.
+        </p>
+      </div>
+
+      <p class="aviso-update reveal">Última actualización: abril 2026</p>
+
+    </div>
+  </section>
+
+  <!-- FOOTER MÍNIMO -->
+  <footer class="footer-mini">
+    <div class="container">
+      <p>
+        © 2026 Taller de Artes Expresivas Caballo Amarillo ·
+        <a href="../index.html">Volver al inicio</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    /* Scroll reveal */
+    (function () {
+      const els = document.querySelectorAll('.reveal');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      els.forEach(el => io.observe(el));
+    })();
+  </script>
+
+</body>
+</html>
