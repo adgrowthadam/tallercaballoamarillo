@@ -155,19 +155,26 @@
       justify-content: space-between;
     }
     .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+    .nav-logo img {
+      height: 44px;
+      width: auto;
+      display: block;
+      flex-shrink: 0;
+    }
+    .nav-logo-text {
       font-weight: 900;
-      font-size: 1.1rem;
-      letter-spacing: 0.05em;
-      color: var(--primary);
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
+      color: var(--text);
       line-height: 1.2;
     }
-    .nav-logo span {
-      display: block;
-      font-size: 0.65rem;
-      font-weight: 500;
-      color: var(--text);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+    .nav-logo-text .logo-amarillo {
+      color: var(--primary);
+      font-style: normal;
     }
     .nav-cta {
       font-size: 0.85rem;
@@ -223,10 +230,6 @@
     .hero .container {
       position: relative;
       z-index: 1;
-    }
-
-    .hero-content {
-      max-width: 680px;
     }
 
     .hero-eyebrow {
@@ -296,6 +299,47 @@
       border-radius: 50%;
       background: var(--primary);
       flex-shrink: 0;
+    }
+
+    /* Hero layout con imagen */
+    .hero-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
+      width: 100%;
+    }
+    .hero-content {
+      max-width: 680px;
+      width: 100%;
+    }
+    .hero-img-wrap {
+      width: 100%;
+      max-width: 380px;
+      margin: 0 auto;
+    }
+    .hero-img-wrap img {
+      width: 100%;
+      height: auto;
+      border-radius: var(--radius);
+      display: block;
+      margin: 0 auto;
+    }
+    @media (min-width: 900px) {
+      .hero-inner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .hero-content {
+        max-width: 56%;
+      }
+      .hero-img-wrap {
+        width: 38%;
+        max-width: 420px;
+        margin: 0;
+        flex-shrink: 0;
+      }
     }
 
     .hero-scroll {
@@ -1068,8 +1112,8 @@
   <nav class="navbar" id="navbar" role="navigation" aria-label="Navegación principal">
     <div class="container">
       <div class="nav-logo">
-        Caballo Amarillo
-        <span>Taller de Música y Arte · Veracruz</span>
+        <img src="images/CABALLOAMARILLO.png" alt="Taller de Artes Expresivas Caballo Amarillo" />
+        <span class="nav-logo-text">Taller de artes expresivas <em class="logo-amarillo">caballo amarillo</em></span>
       </div>
       <a href="#ghl-form" class="btn-cta nav-cta">Primera sesión gratis →</a>
     </div>
@@ -1083,24 +1127,30 @@
     <div class="hero-deco"></div>
 
     <div class="container">
-      <div class="hero-content">
-        <p class="hero-eyebrow reveal">Taller de Violín y Pintura · Veracruz</p>
-        <h1 class="reveal reveal-delay-1">
-          El talento no <em>se nace</em> —<br>se despierta.
-        </h1>
-        <p class="hero-sub reveal reveal-delay-2">
-          Aprende violín o pintura desde cero, a tu propio ritmo.
-          Sin importar tu edad. Sin importar si nunca has tomado
-          una clase en tu vida.
-        </p>
-        <div class="hero-cta-wrap reveal reveal-delay-3">
-          <a href="#ghl-form" class="btn-cta">Agenda tu primera sesión gratis →</a>
-          <p class="hero-note">Sin compromiso. Solo tú, el arte y un maestro que sabe escucharte.</p>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <p class="hero-eyebrow reveal">TALLER DE ARTES EXPRESIVAS CABALLO AMARILLO</p>
+          <h1 class="reveal reveal-delay-1">
+            El Talento no <em>se nace</em> —<br>se despierta.
+          </h1>
+          <p class="hero-sub reveal reveal-delay-2">
+            Aprende violín o pintura desde cero, a tu propio ritmo.
+            Sin importar tu edad. Sin importar si nunca has tomado
+            una clase en tu vida.
+          </p>
+          <div class="hero-cta-wrap reveal reveal-delay-3">
+            <a href="#ghl-form" class="btn-cta">Agenda tu primera sesión gratis →</a>
+            <p class="hero-note">Sin compromiso. Solo tú, el arte y un maestro que sabe escucharte.</p>
+          </div>
+          <div class="hero-badges reveal reveal-delay-4">
+            <div class="hero-badge"><span class="dot"></span> Primera sesión gratis</div>
+            <div class="hero-badge"><span class="dot"></span> Desde 15 hasta 70 años</div>
+            <div class="hero-badge"><span class="dot"></span> Colonia Floresta, Veracruz</div>
+          </div>
         </div>
-        <div class="hero-badges reveal reveal-delay-4">
-          <div class="hero-badge"><span class="dot"></span> Primera sesión gratis</div>
-          <div class="hero-badge"><span class="dot"></span> Desde 15 hasta 70 años</div>
-          <div class="hero-badge"><span class="dot"></span> Colonia Florista, Veracruz</div>
+        <!-- IMAGE: images/laudcaballo.png | Imagen del laúd Caballo Amarillo. En móvil se muestra centrada debajo del contenido; en escritorio aparece a la derecha del texto. -->
+        <div class="hero-img-wrap reveal reveal-delay-3">
+          <img src="images/laudcaballo.png" alt="Laúd Caballo Amarillo" />
         </div>
       </div>
     </div>
@@ -1298,11 +1348,10 @@
           </div>
           <div class="maestro-body">
             <p class="maestro-especialidad">Maestro de Violín</p>
-            <h3>[Nombre pendiente]</h3>
             <p>
-              "Su método parte de una premisa simple: antes de tocar una nota, hay que saber qué quieres decir con ella."
+              Formación en violín clásico con trayectoria en enseñanza para principiantes y nivel intermedio. Experiencia acompañando a personas de todas las edades en su primer contacto con el instrumento.
             </p>
-            <span class="maestro-pending-note">Biografía completa próximamente</span>
+            <span class="maestro-pending-note">Experiencia y especialización completas próximamente</span>
           </div>
         </div>
 
@@ -1317,11 +1366,10 @@
           </div>
           <div class="maestro-body">
             <p class="maestro-especialidad">Maestro de Pintura</p>
-            <h3>[Nombre pendiente]</h3>
             <p>
-              "Su clase no tiene reglas de técnica: tiene reglas de honestidad. Acompañando a personas que nunca creyeron que podían pintar — hasta que lo hicieron."
+              Trayectoria en artes plásticas y técnicas pictóricas con enfoque en expresión creativa. Experiencia guiando a alumnos sin conocimientos previos hacia el descubrimiento de su propio lenguaje visual.
             </p>
-            <span class="maestro-pending-note">Biografía completa próximamente</span>
+            <span class="maestro-pending-note">Experiencia y especialización completas próximamente</span>
           </div>
         </div>
 
@@ -1424,7 +1472,7 @@
       <div class="contacto-grid reveal reveal-delay-3">
         <div class="contacto-item">
           <span class="contacto-icon">📍</span>
-          <span>Colonia Florista, <strong>Veracruz</strong></span>
+          <span>Colonia Floresta, <strong>Veracruz</strong></span>
         </div>
         <div class="contacto-item">
           <span class="contacto-icon">📱</span>
@@ -1448,7 +1496,7 @@
         <span>Música y Arte · Veracruz, México</span>
       </div>
       <div class="footer-meta">
-        Colonia Florista, Veracruz · © 2026<br>
+        Colonia Floresta, Veracruz · © 2026<br>
         Diseñado por <strong style="color:rgba(255,255,255,0.4)">AdGrowth Agency</strong>
       </div>
       <div class="footer-social">
