@@ -45,6 +45,7 @@
       --font:        'Montserrat', sans-serif;
       --radius:      12px;
       --transition:  0.35s ease;
+      --noise:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.18'/%3E%3C/svg%3E");
     }
 
     *, *::before, *::after {
@@ -197,7 +198,9 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, #1a0a00 0%, #2d1500 40%, #0d0d0d 100%);
+      background-color: #0d0d0d;
+      background-image: var(--noise), linear-gradient(135deg, #1a0a00 0%, #2d1500 40%, #0d0d0d 100%);
+      background-size: 300px 300px, cover;
       z-index: 0;
     }
     .hero-bg::after {
@@ -376,6 +379,22 @@
     .identificacion {
       padding: 6rem 0;
       background: var(--bg-section);
+      position: relative;
+    }
+
+    /* IMAGE: images/identificacion-bg.jpg | Background de la sección identificación con fade 70% */
+    .identificacion::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('images/identificacion-bg.jpg') center center / cover no-repeat;
+      opacity: 0.15;
+      z-index: 0;
+    }
+
+    .identificacion .container {
+      position: relative;
+      z-index: 1;
     }
 
     .identificacion-grid {
@@ -403,7 +422,7 @@
     .frase-card {
       border-left: 3px solid var(--primary);
       padding: 1rem 1.25rem;
-      background: rgba(242, 183, 5, 0.06);
+      background: rgba(242, 183, 5, 0.65);
       border-radius: 0 var(--radius) var(--radius) 0;
       margin-bottom: 1rem;
       font-size: 0.95rem;
@@ -454,7 +473,9 @@
     ======================================================== */
     .sesion-gratis {
       padding: 6rem 0;
-      background: var(--bg-dark);
+      background-color: var(--bg-dark);
+      background-image: var(--noise);
+      background-size: 300px 300px;
       position: relative;
       overflow: hidden;
     }
@@ -469,6 +490,26 @@
       border-radius: 50%;
       background: radial-gradient(circle, rgba(242, 183, 5, 0.06) 0%, transparent 65%);
       pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Degradado con colores principales de la web */
+    .sesion-gratis::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg,
+        rgba(242, 183, 5, 0.18) 0%,
+        rgba(242, 159, 5, 0.12) 30%,
+        rgba(242, 135, 5, 0.10) 60%,
+        rgba(242, 68, 5, 0.14) 100%
+      );
+      z-index: 0;
+    }
+
+    .sesion-gratis .container {
+      position: relative;
+      z-index: 2;
     }
 
     .sesion-header {
@@ -569,7 +610,9 @@
     ======================================================== */
     .disciplinas {
       padding: 6rem 0;
-      background: var(--bg-section);
+      background-color: var(--bg-section);
+      background-image: var(--noise);
+      background-size: 300px 300px;
     }
 
     .disciplinas-header {
@@ -684,6 +727,22 @@
     .maestros {
       padding: 6rem 0;
       background: var(--bg-dark);
+      position: relative;
+    }
+
+    /* IMAGE: images/sesion-gratis-bg.jpg | Background sección maestros */
+    .maestros::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('images/sesion-gratis-bg.jpg') center center / cover no-repeat;
+      opacity: 0.15;
+      z-index: 0;
+    }
+
+    .maestros .container {
+      position: relative;
+      z-index: 1;
     }
 
     .maestros-header {
@@ -869,7 +928,9 @@
     ======================================================== */
     .faq {
       padding: 6rem 0;
-      background: var(--bg-dark);
+      background-color: var(--bg-dark);
+      background-image: var(--noise);
+      background-size: 300px 300px;
     }
 
     .faq-header {
@@ -883,9 +944,42 @@
       letter-spacing: -0.02em;
     }
 
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    @media (min-width: 900px) {
+      .faq-layout { grid-template-columns: 1fr 1fr; align-items: center; }
+    }
+
+    /* IMAGE: images/faq-estudio.jpg | Foto del estudio/taller real */
+    .faq-img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+    }
+    .faq-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      filter: brightness(0.82) contrast(1.12) saturate(1.4) sepia(0.18);
+      border-radius: var(--radius);
+      display: block;
+    }
+    .faq-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,8,5,0.55) 0%, transparent 50%);
+      border-radius: var(--radius);
+    }
+
     .faq-list {
-      max-width: 720px;
-      margin: 0 auto;
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
@@ -962,10 +1056,11 @@
     ======================================================== */
     .cta-final {
       padding: 6rem 0;
-      background: linear-gradient(135deg, #1a0a00 0%, #0d0d0d 60%);
+      background-color: #0d0d0d;
+      background-image: var(--noise), linear-gradient(135deg, #1a0a00 0%, #0d0d0d 60%);
+      background-size: 300px 300px, cover;
       position: relative;
       overflow: hidden;
-      text-align: center;
     }
     .cta-final::before {
       content: '';
@@ -975,6 +1070,54 @@
       pointer-events: none;
     }
     .cta-final .container { position: relative; }
+
+    .cta-final-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    @media (min-width: 900px) {
+      .cta-final-layout { grid-template-columns: 1fr 1fr; text-align: left; }
+    }
+
+    .cta-final-text {
+      text-align: center;
+    }
+    @media (min-width: 900px) {
+      .cta-final-text { text-align: left; }
+    }
+
+    /* IMAGE: images/cta-pinturas.jpg | Frascos de pintura acrílica en mesa del taller */
+    .cta-final-img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      border-radius: 2rem;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 0 40px rgba(242, 183, 5, 0.18), 0 20px 60px rgba(0,0,0,0.5);
+      border: 1px solid rgba(242, 183, 5, 0.2);
+    }
+    .cta-final-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      filter: brightness(0.88) contrast(1.1) saturate(1.35) sepia(0.2);
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .cta-final-img:hover img {
+      transform: scale(1.04);
+    }
+    .cta-final-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(242,183,5,0.08) 0%, transparent 60%);
+      border-radius: 2rem;
+      pointer-events: none;
+    }
 
     .cta-final h2 {
       font-size: clamp(2rem, 5vw, 3.5rem);
@@ -1023,7 +1166,9 @@
        FOOTER
     ======================================================== */
     .footer {
-      background: #080808;
+      background-color: #080808;
+      background-image: var(--noise);
+      background-size: 300px 300px;
       border-top: 1px solid rgba(255,255,255,0.05);
       padding: 2.5rem 0;
     }
@@ -1181,12 +1326,9 @@
           </div>
         </div>
 
-        <!-- IMAGE: images/identificacion.jpg | Primer plano de manos adultas tocando violín por primera vez, expresión de concentración y descubrimiento. Effect: sin filtro, encuadre cercano -->
+        <!-- IMAGE: images/violin-identificacion.jpg | Violín en clase -->
         <div class="identificacion-img reveal reveal-delay-2">
-          <div class="img-placeholder">
-            <div class="img-placeholder-icon">🎻</div>
-            <span>Foto: primera clase de violín</span>
-          </div>
+          <img src="images/violin-identificacion.jpg" alt="Clase de violín en Taller Caballo Amarillo" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);">
         </div>
 
       </div>
@@ -1265,11 +1407,9 @@
 
         <!-- VIOLÍN -->
         <div class="disciplina-card reveal reveal-delay-1">
-          <!-- IMAGE: images/violin.jpg | Estudiante adulto tocando violín en clase, manos en posición, fondo cálido desenfocado. Effect: sutil overlay oscuro en la parte inferior -->
+          <!-- IMAGE: images/violin-identificacion.jpg | Violín en clase -->
           <div class="disciplina-img disciplina-img-violin">
-            <div class="img-placeholder">
-              <div class="img-placeholder-icon">🎻</div>
-            </div>
+            <img src="images/violin-identificacion.jpg" alt="Clase de violín" style="width:100%;height:100%;object-fit:cover;">
             <span class="disciplina-label">Violín</span>
           </div>
           <div class="disciplina-body">
@@ -1287,11 +1427,9 @@
 
         <!-- PINTURA -->
         <div class="disciplina-card reveal reveal-delay-2">
-          <!-- IMAGE: images/pintura.jpg | Mano con pincel sobre lienzo con colores cálidos, expresión artística. Effect: sutil overlay oscuro en la parte inferior -->
+          <!-- IMAGE: images/pintura-arte.png | Arte / pintura -->
           <div class="disciplina-img disciplina-img-pintura">
-            <div class="img-placeholder">
-              <div class="img-placeholder-icon">🎨</div>
-            </div>
+            <img src="images/pintura-arte.png" alt="Clase de pintura y arte" style="width:100%;height:100%;object-fit:cover;">
             <span class="disciplina-label">Pintura</span>
           </div>
           <div class="disciplina-body">
@@ -1416,7 +1554,14 @@
         <h2 class="reveal">Lo que más nos preguntan</h2>
       </div>
 
-      <div class="faq-list">
+      <div class="faq-layout">
+
+        <!-- IMAGE: images/faq-estudio.jpg | Foto real del taller Caballo Amarillo -->
+        <div class="faq-img reveal">
+          <img src="images/faq-estudio.jpg" alt="Estudio Taller Caballo Amarillo">
+        </div>
+
+        <div class="faq-list">
 
         <div class="faq-item reveal reveal-delay-1">
           <button class="faq-question" aria-expanded="false">
@@ -1454,7 +1599,9 @@
           </div>
         </div>
 
-      </div>
+        </div><!-- /faq-list -->
+
+      </div><!-- /faq-layout -->
     </div>
   </section>
 
@@ -1463,31 +1610,42 @@
   ====================================================== -->
   <section class="cta-final" id="cta-final">
     <div class="container">
-      <span class="section-tag reveal">Es tu momento</span>
-      <h2 class="reveal">
-        El mejor momento para empezar<br>era antes.<br>
-        <span>El segundo mejor es hoy.</span>
-      </h2>
-      <p class="cta-final-sub reveal reveal-delay-1">
-        Tu primera sesión es gratis. Los lugares son limitados.
-      </p>
-      <div class="cta-final-btn-wrap reveal reveal-delay-2">
-        <a href="#ghl-form-section" class="btn-cta">Agenda aquí →</a>
-      </div>
+      <div class="cta-final-layout">
 
-      <div class="contacto-grid reveal reveal-delay-3">
-        <div class="contacto-item">
-          <span class="contacto-icon">📍</span>
-          <span>Colonia Floresta, <strong>Veracruz</strong></span>
+        <div class="cta-final-text">
+          <span class="section-tag reveal">Es tu momento</span>
+          <h2 class="reveal">
+            El mejor momento para empezar<br>era antes.<br>
+            <span>El segundo mejor es hoy.</span>
+          </h2>
+          <p class="cta-final-sub reveal reveal-delay-1">
+            Tu primera sesión es gratis. Los lugares son limitados.
+          </p>
+          <div class="cta-final-btn-wrap reveal reveal-delay-2">
+            <a href="#ghl-form-section" class="btn-cta">Agenda aquí →</a>
+          </div>
+
+          <div class="contacto-grid reveal reveal-delay-3">
+            <div class="contacto-item">
+              <span class="contacto-icon">📍</span>
+              <span>Colonia Floresta, <strong>Veracruz</strong></span>
+            </div>
+            <div class="contacto-item">
+              <span class="contacto-icon">📱</span>
+              <span>WhatsApp: <strong>[pendiente]</strong></span>
+            </div>
+            <div class="contacto-item">
+              <span class="contacto-icon">🕐</span>
+              <span>Horarios: <strong>[pendiente]</strong></span>
+            </div>
+          </div>
         </div>
-        <div class="contacto-item">
-          <span class="contacto-icon">📱</span>
-          <span>WhatsApp: <strong>[pendiente]</strong></span>
+
+        <!-- IMAGE: images/cta-pinturas.jpg | Frascos de pintura acrílica en mesa del taller -->
+        <div class="cta-final-img reveal reveal-delay-2">
+          <img src="images/cta-pinturas.jpg" alt="Materiales de pintura en Taller Caballo Amarillo">
         </div>
-        <div class="contacto-item">
-          <span class="contacto-icon">🕐</span>
-          <span>Horarios: <strong>[pendiente]</strong></span>
-        </div>
+
       </div>
     </div>
   </section>
